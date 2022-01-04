@@ -1,15 +1,23 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 0 10rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.canvasContainer {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  margin-top: -60vh;
+  z-index: 0;
 }
 
 .footer {
@@ -36,13 +44,15 @@
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .title {
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: #fafafa;
+  /* margin: 4rem 0rem; */
 }
 
 .title,
@@ -51,66 +61,18 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 3rem 0rem;
   line-height: 1.5;
   font-size: 1.5rem;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+@media (max-width: 500px) {
+  .title {
+    font-size: 3.5rem;
+  }
 }
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media (max-width: 400px) {
+  .title {
+    font-size: 3rem;
   }
 }

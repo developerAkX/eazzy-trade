@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Eazzy Trade</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            display: grid;
+            place-items: center;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto;
+            gap: 1em 1em;
+            grid-template-areas:
+                "."
+                "."
+                "."
+                ".";
+            background: #fff;
+            max-width: 60rem;
+        }
+
+        .bar {
+            height: 4rem;
+            background: #4557fc27;
+            top: 0px;
+            position: relative;
+            border-radius: 1.2rem;
+            margin: 1rem 10%;
+        }
+
+        .logo {
+            display: grid;
+            place-items: center;
+            height: 20rem;
+            margin: auto;
+
+        }
+
+        .logo__svg {
+            height: 20rem;
+            width: auto;
+            margin: auto;
+        }
+
+        .email {
+            display: grid;
+            height: 100%;
+            width: auto;
+            margin: 0px 10%;
+            background: #4557fc27;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .email__divider {
+            width: 100%;
+            border: 0px;
+            height: 2px;
+            background: #b2c3f3;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .email__title {
+            color: #3168FF;
+        }
+
+        .email__message {
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #6b82b8;
+            font-size: 17px;
+
+        }
+
+        .footer {
+            display: grid;
+            height: 100%;
+            width: auto;
+            margin: 0px 10%;
+            background: #4557fc27;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 4rem;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            place-items: center;
+        }
+
+        .footer_notice {
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-template-columns: auto 1rem auto;
+            grid-template-rows: 1fr;
+            gap: 1em 1em;
+            grid-template-areas:
+                ". . .";
+            justify-content: space-evenly;
+            justify-items: center;
+            margin: auto;
+        }
+
+        .copyright__notice {
+            color: #2c46fc;
+            color: #486096;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+
+        .footer__divider {
+            width: 100%;
+            border: 0px;
+            height: 4px;
+            background: #b3bbf8;
+            border-radius: 1px;
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+        }
+
+        .link {
+            text-decoration: none;
+            display: block;
+            color: #2c46fc;
+            font-weight: 700;
+            font-size: 17px;
+            background: #b3bbf8;
+            padding: .7rem 1.1rem;
+            border-radius: .5rem;
+            width: 130px;
+            margin: auto;
+            margin-bottom: 20px;
+
+        }
+    </style>
+    <div class="bar"></div>
+    <div class="logo">
+        <img class="logo__svg"
+            src="https://www.noticebard.com/wp-content/uploads/2020/02/Sri-Venkateswara-UniversityTirupati-Cynosure.png"
+            alt="Sri Venkateswara University">
+        >
+
+
+    </div>
+    <div class="email">
+        <h1 class="email__title">
+            <%=Title%>
+        </h1>
+        <hr class="email__divider">
+        <div class="email__message">
+            <%=Message%>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_notice">
+            <span class="copyright__notice">Sir Venkateswara University © 2021</span>
+        </div>
+
+        <hr class="footer__divider">
+        <a href="<%=HomePageURL%>" target="_blank" class="link">Visit Our us</a>
+    </div>
+</body>
+
+</html>
