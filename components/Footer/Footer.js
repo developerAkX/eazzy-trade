@@ -25,6 +25,7 @@ const Footer = () => {
         </LeftNav>
       </NavigationArea>
       <MidBar />
+
       <LogoArea>
         <CopyrightNotice>
           <Logo
@@ -43,6 +44,16 @@ const Footer = () => {
           />
           {new Date().getFullYear()}
         </CopyrightNotice>
+        <Credit>
+          Designed by <span> </span>
+          <a
+            href="https://www.instagram.com/developerak/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            developerak
+          </a>
+        </Credit>
       </LogoArea>
     </Root>
   );
@@ -51,7 +62,6 @@ const Footer = () => {
 export default Footer;
 
 const Root = styled.div`
-
   z-index: 2;
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
@@ -119,7 +129,6 @@ const NavigationArea = styled.div`
     justify-items: center;
     align-items: center;
   }
-  
 `;
 const LeftNav = styled.div`
   display: flex;
@@ -160,7 +169,7 @@ const StyledButton = styled(Button)`
   color: rgb(160, 170, 180);
   padding: 0.5rem 1rem;
   font-size: 18px;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 `;
 const Logo = styled(Typography)`
   text-transform: capitalize;
@@ -169,5 +178,18 @@ const Logo = styled(Typography)`
   color: #0070f3;
   span {
     color: #fff;
+  }
+`;
+const Credit = styled(Typography)`
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgb(160, 170, 180);
+  display: flex;
+  span {
+    width: .3rem;
+  }
+  a {
+    color: #0070f3;
   }
 `;

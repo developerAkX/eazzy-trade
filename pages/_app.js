@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }, [router]);
   return (
     <Root>

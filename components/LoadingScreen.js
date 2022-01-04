@@ -16,8 +16,8 @@ const Screen = styled.div`
   height: 100vh;
   width: 100%;
   opacity: 0;
-  animation: fade 0.4s ease-in forwards;
-  background: black;
+  animation: fade 0.2s ease-in forwards;
+  background: #070e22;
 
   @keyframes fade {
     0% {
@@ -44,17 +44,17 @@ const Balls = styled.div`
     border-radius: 50%;
     background: #1b5299;
     margin: 0 6px 0 0;
-    animation: oscillate 0.7s ease-in forwards infinite;
+    animation: oscillate 0.4s ease-in forwards infinite;
   }
 
   .one {
-    animation-delay: 0.5s;
+    animation-delay: 0.1s;
   }
   .two {
-    animation-delay: 1s;
+    animation-delay: .2s;
   }
   .three {
-    animation-delay: 2s;
+    animation-delay: .3s;
   }
 
   @keyframes oscillate {

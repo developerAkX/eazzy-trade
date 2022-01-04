@@ -9,6 +9,7 @@ import styles from "../styles/Home.module.css";
 import InfoImgCard from "./../components/ShowCards/InfoImgCard";
 import profilePic from "../public/s6-01.jpg";
 import TitleCard from "../components/ShowCards/TitleCard";
+import Link from "next/link";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 500px)");
@@ -22,11 +23,13 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">EazzyTrade.in !</a>
+          Welcome to <span className={styles.logoS}>EazzyTrade.in !</span>
         </h1>
         <p className={styles.description}>
           Get started by
-          <EnrolmentButton variant="outlined">Enrolling</EnrolmentButton>
+          <Link passHref href="/Course">
+            <EnrolmentButton variant="outlined">Enrolling</EnrolmentButton>
+          </Link>
         </p>
       </main>
       <div className={styles.canvasContainer}>
