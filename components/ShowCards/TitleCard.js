@@ -17,7 +17,9 @@ const Root = styled(Box)`
   gap: 0px 0px;
   justify-content: start;
   justify-items: start;
-  margin-left: 2rem;
+  @media (max-width: 600px) {
+    padding: 0.2rem .6rem;
+  }
 `;
 const TitleText = styled(Typography)`
   font-size: 25px;

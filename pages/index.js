@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, Card, Paper } from "@mui/material";
+import { Button, Card, Paper, useMediaQuery } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/AppBar/Header";
@@ -11,6 +11,8 @@ import profilePic from "../public/s6-01.jpg";
 import TitleCard from "../components/ShowCards/TitleCard";
 
 export default function Home() {
+  const isMobile = useMediaQuery("(max-width: 500px)");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -30,12 +32,7 @@ export default function Home() {
       <div className={styles.canvasContainer}>
         <CanvasScreen
           style={{
-            position: "absolute",
-            display: "grid",
-            placeItems: "center",
-            marginTop: "100vh",
-            transform: "translate(50vw, 20vh)",
-            width: "95vw",
+            width: isMobile ? "100vw" : "calc(100vw - 10px)",
             height: "100vh",
           }}
         />
@@ -100,20 +97,17 @@ const TranslucentCard = styled(Card)`
   max-width: 60rem;
   width: 92vw;
   margin: calc(2rem) auto;
-  background: transparent;
   border-radius: 1.2rem;
   box-shadow: none;
   backdrop-filter: blur(8px);
-  /* border-style: solid; */
-  /* border-color: rgba(194, 224, 255, 0.08); */
-  /* border-width: 2px; */
   background: rgb(11, 22, 53, 0.7);
   color: rgb(160, 170, 180);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
   display: flex;
   align-items: stretch;
   flex-direction: column;
-  /* display: none; */
   z-index: 10;
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
 `;

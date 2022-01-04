@@ -52,7 +52,7 @@ const Root = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem 1.5rem;
   grid-auto-flow: row;
-  margin: 2rem;
+  margin-top: 2rem;
   align-items: center;
   @media (max-width: 600px) {
     display: grid;
@@ -60,6 +60,9 @@ const Root = styled.div`
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: ".";
+  }
+  @media (max-width: 500px) {
+    margin-top: 1rem;
   }
   max-width: 70rem;
 `;
@@ -77,6 +80,9 @@ const TitleText = styled(Typography)`
 `;
 const TextSection = styled(Typography)`
   padding: 1rem;
+  @media (max-width: 600px) {
+    padding: 1rem .5rem;
+  }
 `;
 const DescriptionText = styled.div`
   font-size: 18px;

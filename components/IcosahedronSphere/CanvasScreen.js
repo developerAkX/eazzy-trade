@@ -6,8 +6,8 @@ import SphereComp from "./SphereComp";
 export default function CanvasScreen(props) {
   return (
     <Canvas {...props}>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={4} />
+      <ambientLight intensity={0.4} />
+      <spotLight position={[10, 10, 10]} angle={15} penumbra={4} />
       <pointLight position={[-10, -10, -10]} />
       <Icosahedron />
     </Canvas>

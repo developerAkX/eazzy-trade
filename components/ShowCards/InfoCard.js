@@ -13,10 +13,11 @@ export default function InfoCard({ reverse, title, description }) {
   );
 }
 const Root = styled.div`
-  margin: 2rem;
-  @media (max-width: 600px) {
-  }
+  margin-top: 2rem;
   max-width: 70rem;
+  @media (max-width: 500px) {
+    margin-top: 1rem;
+  }
 `;
 const TitleText = styled(Typography)`
   font-weight: 500;

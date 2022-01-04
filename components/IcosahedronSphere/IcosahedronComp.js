@@ -12,21 +12,41 @@ export default function IcosahedronComp() {
   const handleClick = useCallback((e) => set((state) => !state), []);
   return (
     <>
+      <directionalLight
+        color="#4032a8"
+        intensity={0.75}
+        position={[1.5, 2, 2]}
+      />
+      <directionalLight
+        color="#32a838"
+        intensity={0.8}
+        position={[-1.5, -2, 2]}
+      />
+      <directionalLight
+        color="#0xbf79fc"
+        intensity={0.4}
+        position={[-2, 2, -2.5]}
+      />
+      <directionalLight
+        color="#a8327d"
+        intensity={0.8}
+        position={[1, 1, -1.5]}
+      />
       <mesh ref={ref} scale={[1, 1, 1]} onClick={handleClick}>
         <icosahedronBufferGeometry
           attach="geometry"
           args={[3, 2]}
-          radius={200}
-          detail={200}
+          radius={2000000000}
+          detail={2000000}
         />
         <meshLambertMaterial
           attach="material"
-          color="#0xffffff"
-          //   color="#0070f3"
+          // color="#fff"
+          color="#0070f3"
           wireframe
-          wireframeLinewidth={1}
+          wireframeLinewidth={2}
           transparent
-          opacity={0.3}
+          opacity={1.5}
         />
       </mesh>
     </>

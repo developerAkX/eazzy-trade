@@ -11,16 +11,10 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => {
-      setLoading(true);
-    };
-    const handleComplete = () => {
+    setLoading(true);
+    setTimeout(() => {
       setLoading(false);
-    };
-
-    router.events.on("routeChangeStart", handleStart);
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
+    }, 1500);
   }, [router]);
   return (
     <Root>

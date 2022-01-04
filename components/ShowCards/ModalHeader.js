@@ -40,13 +40,7 @@ const Root = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-const Title = styled(Typography)`
-  color: #a0aab4;
-  font-weight: 500;
-  font-size: 1.3rem;
-  padding-top: 6px;
-  padding-left: 17px;
-`;
+
 const Nav = styled.nav``;
 const NavButton = styled(IconButton)`
   color: #a0aab4;
@@ -54,4 +48,3 @@ const NavButton = styled(IconButton)`
     color: #0070f3;
   }
 `;
-/* transform: ${({refetchLoading})=> refetchLoading ? }; */
