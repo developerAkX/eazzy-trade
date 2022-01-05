@@ -3,14 +3,20 @@ import styled from "@emotion/styled";
 import { Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
-export default function InfoCard({ picSrc, reverse, title, description }) {
+export default function InfoImgCard({
+  picSrc,
+  reverse,
+  title,
+  picProps,
+  description,
+}) {
   const isTablet = useMediaQuery("(max-width: 600px)");
   return (
     <Root>
       {isTablet ? (
         <>
           <ImageSection>
-            <Image src={picSrc} alt="Picture of the author" />
+            <Image src={picSrc} alt="Picture of the author" {...picProps} />
           </ImageSection>
           <TextSection>
             <TitleText>{title}</TitleText>
@@ -81,7 +87,7 @@ const TitleText = styled(Typography)`
 const TextSection = styled(Typography)`
   padding: 1rem;
   @media (max-width: 600px) {
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
   }
 `;
 const DescriptionText = styled.div`

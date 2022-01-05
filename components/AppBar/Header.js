@@ -14,7 +14,7 @@ import SideBar from "./SideBar";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
-const pages = ["Home", "Service", "Course", "About us"];
+const pages = ["Home", "Service", "Course"];
 
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

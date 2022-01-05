@@ -1,17 +1,106 @@
+import { Card, Divider } from "@mui/material";
+import InfoImgCard from "../components/ShowCards/InfoImgCard";
+import InfoCard from "../components/ShowCards/InfoCard";
+import TitleCard from "../components/ShowCards/TitleCard";
 import styled from "@emotion/styled";
 
 export default function PrivacyPolicy() {
   return (
     <Root>
-      <div>Coming soon .....</div>
+      <TitleCard text="PRIVACY POLICY" />
+      {content.map((section, index) => (
+        <TranslucentCard key={index} elevation={9}>
+          <InfoCard title={section.title} description={section.description} />
+        </TranslucentCard>
+      ))}
     </Root>
   );
 }
 
 const Root = styled.div`
-  height: 100vh;
-  width: 100vw;
-  color: #fff;
   display: grid;
-  place-items: center;
+  gap: 2rem;
+  justify-content: start;
+  justify-items: start;
+  padding: 2rem;
+  @media (max-width: 50px) {
+    padding: 1rem;
+  }
+  margin-top: 1rem;
 `;
+
+const TranslucentCard = styled(Card)`
+  max-width: 60rem;
+  border-radius: 1.2rem;
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+  background: rgb(11, 22, 53, 0.7);
+  color: rgb(160, 170, 180);
+  z-index: 10;
+  display: grid;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 2rem;
+  @media (max-width: 600px) {
+    padding: 1rem;
+  }
+`;
+
+const content = [
+  {
+    title: "",
+    description: (
+      <>
+        “AYMPER MARKETS” RESPECTS YOUR PRIVACY. PLEASE SEE OUR PRIVACY NOTICE
+        FOR IMPORTANT INFORMATION AND DISCLOSURES RELATING TO THE COLLECTION AND
+        USE OF YOUR PERSONALLY IDENTIFIABLE INFORMATION IN CONNECTION WITH YOUR
+        USE OF THE SERVICES.
+        <br />
+        <br />
+        1). WE RESPECT THE PRIVACY OF OUR MEMBERS AND ARE SERIOUS ABOUT
+        PROTECTING YOUR ONLINE PRIVACY. THIS POLICY WILL EXPLAIN HOW WE GATHER
+        AND USE PERSONAL INFORMATION SUBMITTED. THEREFORE, BY REGISTERING AND
+        USING THIS SITE, YOU ARE AGREEING AND ACCEPTING THIS POLICY. INFORMATION
+        MAY BE USED IN ADDITIONAL WAYS AS POSTED ON THIS PRIVACY POLICY IN THE
+        FUTURE. AS IF WE SUSPECT A USER OF COMMITTING FRAUD, IN WHICH CASE USER
+        INFORMATION MAY BE SHARED DURING THE COURSE OF OUR INVESTIGATION. WE
+        RESERVE THE RIGHT TO CHANGE THIS POLICY AT ANY TIME. IF WE MAKE A
+        MATERIAL CHANGE REGARDING HOW WE USE YOUR PERSONAL INFORMATION, WE MAY
+        NOTIFY YOU OF THE EXISTENCE AND LOCATION OF THE NEW OR REVISED POLICY
+        THROUGH EMAIL OR BY POSTING THE CHANGES ONLINE AT OUR WEBSITE
+        <br />
+        <br />
+        2). WE WILL NOT SELL OR SHARE USER INFORMATION TO OTHER ADVERTISERS OR
+        BUSINESSES IN ORDER TO ENHANCE THE SERVICE PROVIDED TO OUR USERS ALSO
+        DESCRIPTION OF THE CATEGORIES OF PERSONAL INFORMATION DISCLOSED. WE WILL
+        ONLY COLLECT INFORMATION THAT IS VOLUNTEERED DURING THE REGISTRATION
+        PROCESS OR IN ANY RESPONSES TO SPECIFIC INFORMATION REQUESTS. WE DO NEED
+        THIS INFORMATION IN ORDER TO PROVIDE SERVICES THAT YOU REQUEST. WE MAY
+        ALSO COLLECT YOUR IP ADDRESS AND LOGGING INFORMATION FOR YOUR SAFETY FOR
+        FUTURE LOGINS.
+        <br />
+        <br />
+        3). MEMBERS CANNOT USE OTHERS INFORMATION TO CREATE ACCOUNT OR THEY ARE
+        NOT LIABLE TO USE OTHERS CREDIT, DEBIT CARDS OR ANY OTHER TRANSACTION
+        PROCESS, IT WILL BE THE PERSONAL CHOICE AND AGAINST OUR PRIVACY POLICY,
+        AND THIS CAN’T BE ENTERTAINED AT THAT TIME. IF ANYONE FOUND USING OTHERS
+        ACCOUNT FOR TRANSACTION OR SOMEONE CLAIMED, USER WILL BE RESPONSIBLE AND
+        THE ACCOUNT WILL BE TERMINATED PERMANENTLY.
+        <br />
+        <br />
+        4). WE USE COOKIES AND OTHER TECHNOLOGIES TO TRACK THE USE OF OUR SITE
+        AND FOR CERTAIN ADVERTISING PURPOSES
+        <br />
+        <br />
+        5). THE PERSONAL INFORMATION WE COLLECT IS TO HELP US BETTER UNDERSTAND
+        YOUR NEEDS, TO PROVIDE YOU WITH PERSONALIZED AND EFFICIENT SERVICE, AND
+        FOR OTHER PURPOSES DESCRIBED IN THIS PRIVACY POLICY. WE GENERALLY OBTAIN
+        PERSONAL INFORMATION DIRECTLY THROUGH THE INFORMATION THAT YOU PROVIDE
+        TO “AYMPER MARKETS”. WE ALSO MAY OBTAIN PERSONAL INFORMATION
+        AUTOMATICALLY, THROUGH THE USE OF COOKIES AND OTHER TECHNOLOGIES, AND IN
+        SOME INSTANCES FROM THIRD PARTIES, SUCH AS COMPANIES THAT SPONSOR
+        PROGRAMS OR CONFERENCES IN WHICH “AYMPER MARKETS” PARTICIPATES.
+      </>
+    ),
+  },
+];

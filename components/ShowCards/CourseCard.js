@@ -12,7 +12,7 @@ export default function CourseCard({ title, description, picSrc }) {
   };
   return (
     <Root elevation={0}>
-      <EmailModal isModalOpen={isModalOpen} handleClose={handleClose} />
+      <EmailModal messageFor={title} titleBlue="Enrollment" titleWhite="Request" description={`Course Enrollment in progress, Fill this form to request Enrollment for ${title}`} isModalOpen={isModalOpen} handleClose={handleClose} />
       <ImageSection>
         <Image src={profilePic} alt="Picture" />
       </ImageSection>

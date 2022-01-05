@@ -11,10 +11,10 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    // setLoading(true);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 1000);
   }, [router]);
   return (
     <Root>

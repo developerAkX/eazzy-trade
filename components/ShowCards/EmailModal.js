@@ -16,7 +16,14 @@ import useAxios from "axios-hooks";
 import validator from "validator";
 
 export default function EmailModal(props) {
-  const { isModalOpen, handleClose, courseOrContentName } = props;
+  const {
+    isModalOpen,
+    handleClose,
+    titleBlue,
+    titleWhite,
+    description,
+    messageFor,
+  } = props;
   const [isFormValid, setIsFormValid] = useState(false);
   const [isErrorAlert, setIsErrorAlert] = useState(false);
   const [isSuccessAlert, setIsSuccessAlert] = useState(false);
@@ -25,6 +32,7 @@ export default function EmailModal(props) {
     email: "",
     phoneNumber: "",
     message: "",
+    messageFor,
   });
   const [isValid, setIsValid] = useState({
     name: {
@@ -123,6 +131,7 @@ export default function EmailModal(props) {
             email: "",
             phoneNumber: "",
             message: "",
+            messageFor,
           });
         }, 2000);
       }
@@ -136,6 +145,7 @@ export default function EmailModal(props) {
             email: "",
             phoneNumber: "",
             message: "",
+            messageFor,
           });
         }, 2000);
       }
@@ -196,14 +206,11 @@ export default function EmailModal(props) {
                   color: focusColor,
                 }}
               >
-                Enrollment
+                {titleBlue}
               </span>
-              {` Request`}
+              {` ${titleWhite}`}
             </Title>
-            <TitleInfo>
-              Course Enrollment in progress, Fill this form to request
-              Enrollment for {courseOrContentName} Stock Market Course
-            </TitleInfo>
+            <TitleInfo>{description}</TitleInfo>
           </TitleArea>
           <InputArea onChange={handleChange}>
             <CssTextField
@@ -429,5 +436,4 @@ const EnrollButton = styled(Button)`
     background: #969fa3;
     border: 3px solid #969fa3;
   }
-
 `;

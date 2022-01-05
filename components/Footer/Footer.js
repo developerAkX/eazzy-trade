@@ -4,17 +4,27 @@ import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
+import EmailModal from "../ShowCards/EmailModal";
+import { useState } from "react";
 
-const leftNavPages = [
-  "FAQs",
-  "Support",
-  "Terms & conditions",
-  "Privacy Policy",
-];
+const leftNavPages = ["FAQs", "Terms & conditions", "Privacy Policy"];
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
   return (
     <Root>
+      <EmailModal
+        titleBlue="Get"
+        titleWhite="Help"
+        description={`Leave a message! fill this form to request for Support.`}
+        isModalOpen={isModalOpen}
+        handleClose={handleClose}
+        messageFor="Support"
+      />
+
       <NavigationArea>
         <LeftNav>
           {leftNavPages.map((page, index) => (
@@ -22,6 +32,9 @@ const Footer = () => {
               <StyledButton key={index}>{page}</StyledButton>
             </Link>
           ))}
+          <StyledButton onClick={() => setIsModalOpen(true)}>
+            Support
+          </StyledButton>
         </LeftNav>
       </NavigationArea>
       <MidBar />
@@ -66,10 +79,8 @@ const Root = styled.div`
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
   padding: 30px;
-  margin: 0px 8rem;
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: ". .";
   justify-content: space-between;
@@ -77,34 +88,29 @@ const Root = styled.div`
   justify-items: stretch;
   align-items: center;
   gap: 1em 1em;
-  @media (max-width: 1382px) {
-    /* margin: 0px 0rem; */
-  }
   @media (max-width: 900px) {
-    grid-auto-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
       "."
       "."
       ".";
     gap: 0.5em 0.5em;
     justify-content: center;
-    align-content: center;
-    justify-items: stretch;
-    align-items: center;
   }
   && {
-    margin: auto;
     margin-top: auto;
     margin-bottom: 0px;
-    width: 92vw;
+    margin: 0px 2rem;
+    /* width: 92vw; */
     background: transparent;
     box-shadow: none;
     backdrop-filter: blur(50px);
     background: rgb(11, 22, 53, 0.7);
     color: rgb(160, 170, 180);
-    /* display: none; */
+    @media (max-width: 600px) {
+      margin: 0px 1rem;
+    }
   }
 `;
 
@@ -138,7 +144,7 @@ const LeftNav = styled.div`
 `;
 const MidBar = styled.div`
   border-radius: 5px;
-  background: rgb(160, 170, 180, 0.4);
+  /* background: rgb(160, 170, 180, 0.4); */
   width: 2px;
   height: 350px;
   margin: auto;
@@ -148,6 +154,7 @@ const MidBar = styled.div`
     margin-bottom: 20px;
     margin-top: 20px;
   }
+  display: none;
 `;
 
 const LogoArea = styled.div`
@@ -187,7 +194,7 @@ const Credit = styled(Typography)`
   color: rgb(160, 170, 180);
   display: flex;
   span {
-    width: .3rem;
+    width: 0.3rem;
   }
   a {
     color: #0070f3;

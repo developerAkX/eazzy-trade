@@ -31,7 +31,6 @@ const SideBar = (props) => {
         }}
         PaperProps={{
           style: {
-            background: "transparent",
             backdropFilter: "blur(50px)",
             background: "rgb(11, 22, 53, 0.6)",
             color: "rgb(160, 170, 180)",
