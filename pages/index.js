@@ -17,7 +17,7 @@ import SearchingCoursePic from "../public/clip-searching-for-universities-online
 import ReviewCard from "../components/ShowCards/ReviewCard";
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width: 500px)");
+  const isMobile = useMediaQuery("(max-width: 490px)");
 
   return (
     <div className={styles.container}>

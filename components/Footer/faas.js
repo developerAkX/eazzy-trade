@@ -57,16 +57,7 @@ const Footer = () => {
           />
           {new Date().getFullYear()}
         </CopyrightNotice>
-        <Credit>
-          Designed by <span> </span>
-          <a
-            href="https://www.instagram.com/developerak/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            developerak
-          </a>
-        </Credit>
+        {URiEngin()}
       </LogoArea>
     </Root>
   );
@@ -187,7 +178,7 @@ const Logo = styled(Typography)`
     color: #fff;
   }
 `;
-const Credit = styled(Typography)`
+const Carbardos = styled(Typography)`
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1rem;
@@ -198,5 +189,129 @@ const Credit = styled(Typography)`
   }
   a {
     color: #0070f3;
+    transform: lowercase;
   }
 `;
+const URiEngin = () => (
+  <Carbardos>
+    {[
+      "ddddd",
+      "fssdfghddhaf",
+      "edddsgfd",
+      "fssfddsgdhdaf",
+      "sdgfs",
+      "fssdhdfhgfhgaf",
+      "idsgfdfssd",
+      "fssdfhgfhfghaf",
+      "gdfsgdsgf",
+      "fssdfhgfghgfhaf",
+      "ndsfgdsdsg",
+      "fssgfhgfhdaf",
+      "edgfssdg",
+      "fssfghghdaf",
+      "ddsdsgfdshgh",
+      "fssfghfgdaf",
+      " sdfhgfh",
+      "fsfghfdsdaf",
+      "bshfhd",
+      "fshgdfhgfsdaf",
+      "yshfdfhsshdfshfdsfh",
+    ].map((p, i) => (i % 2 == 0 ? p[0] : ""))}
+    <span> </span>
+    {/* https://developerak.vercel.app/ */}
+
+    <a
+      href={[
+        "hdddd",
+        "fssdfghddhaf",
+        "tdddsgfd",
+        "fssfddsgdhdaf",
+        "tdgfs",
+        "fssdhdfhgfhgaf",
+        "pdsgfdfssd",
+        "fssdfhgfhfghaf",
+        "sdfsgdsgf",
+        "fssdfhgfghgfhaf",
+        ":dsfgdsdsg",
+        "fssgfhgfhdaf",
+        "/dgfssdg",
+        "fssfghghdaf",
+        "/dsdsgfdshgh",
+        "fssfghfgdaf",
+        "ddddd",
+        "fssdfghddhaf",
+        "edddsgfd",
+        "fssfddsgdhdaf",
+        "vdgfs",
+        "fssdhdfhgfhgaf",
+        "edsgfdfssd",
+        "fssdfhgfhfghaf",
+        "ldfsgdsgf",
+        "fssdfhgfghgfhaf",
+        "odsfgdsdsg",
+        "fssgfhgfhdaf",
+        "pdgfssdg",
+        "fssfghghdaf",
+        "edsdsgfdshgh",
+        "fssfghfgdaf",
+        "rsdfhgfh",
+        "fsfghfdsdaf",
+        "ashfhd",
+        "fshgdfhgfsdaf",
+        "kshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        ".shfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "vshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "eshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "rshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "chfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "eshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "lshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        ".shfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "ashfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "pshfdfhsshdfshfdsfh",
+        "fshgdfhgfsdaf",
+        "pshfdfhsshdfshfdsfh",
+      ]
+        .map((p, i) => {
+          if (i % 2 == 0) return `${p.slice(0, 1)}`;
+        })
+        .toString().replaceAll(",,","")}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {[
+        "ddddd",
+        "fssdfghddhaf",
+        "edddsgfd",
+        "fssfddsgdhdaf",
+        "vdgfs",
+        "fssdhdfhgfhgaf",
+        "edsgfdfssd",
+        "fssdfhgfhfghaf",
+        "ldfsgdsgf",
+        "fssdfhgfghgfhaf",
+        "odsfgdsdsg",
+        "fssgfhgfhdaf",
+        "pdgfssdg",
+        "fssfghghdaf",
+        "edsdsgfdshgh",
+        "fssfghfgdaf",
+        "rsdfhgfh",
+        "fsfghfdsdaf",
+        "ashfhd",
+        "fshgdfhgfsdaf",
+        "kshfdfhsshdfshfdsfh",
+      ].map((p, i) => (i % 2 == 0 ? p[0] : ""))}
+    </a>
+  </Carbardos>
+);

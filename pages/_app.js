@@ -1,5 +1,5 @@
 import Header from "../components/AppBar/Header";
-import Footer from "../components/Footer/Footer";
+import Faas from "../components/Footer/faas";
 import styled from "@emotion/styled";
 import "../styles/globals.css";
 import LoadingScreen from "../components/LoadingScreen";
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
         <>
           <Header />
           <Component {...pageProps} />
-          <Footer />
+          <Faas />
         </>
       ) : (
         <LoadingScreen />

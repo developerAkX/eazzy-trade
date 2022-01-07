@@ -221,7 +221,7 @@ export default function EmailModal(props) {
               type="text"
               value={formData.name}
               error={!isValid.name.status}
-              helperText={"Invalid name !"}
+              helperText={"Your should not contain any number !"}
             />
             <ContactArea>
               <CssTextField
@@ -232,7 +232,7 @@ export default function EmailModal(props) {
                 type="email"
                 value={formData.email}
                 error={!isValid.email.status}
-                helperText={"Invalid email !"}
+                helperText={"Your Email should be valid !"}
               />
               <CssTextField
                 require
@@ -241,7 +241,7 @@ export default function EmailModal(props) {
                 label="Phone number"
                 value={formData.phoneNumber}
                 error={!isValid.phoneNumber.status}
-                helperText={"Invalid Phone Number !"}
+                helperText={"Your Phone number should be valid!"}
               />
             </ContactArea>
             <CssTextField
@@ -285,6 +285,9 @@ const CssTextField = styles(TextField)({
   },
   ".css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill": {
     borderRadius: "0.7rem",
+  },
+  ".css-1wc848c-MuiFormHelperText-root": {
+    color: nonFocusColor,
   },
   "& .Mui-focused input": {
     color: focusColor,
@@ -370,8 +373,8 @@ const InputArea = styled(FormControl)`
   @media (max-width: 670px) {
     padding: 20px 0px 0px;
   }
-  @media (max-width: 500px) {
-    margin-bottom: 1rem;
+  @media (max-width: 400px) {
+    margin-bottom: 2rem;
   }
 `;
 const BottomBar = styled(Divider)``;
