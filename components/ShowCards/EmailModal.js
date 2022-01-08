@@ -359,6 +359,12 @@ const ContactArea = styled.div`
   grid-template-rows: auto;
   gap: 1rem;
   grid-template-areas: ". .";
+  @media (max-width: 480px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    grid-template-areas: "." ".";
+  }
 `;
 const InputArea = styled(FormControl)`
   display: grid;
