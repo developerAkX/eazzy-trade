@@ -107,13 +107,9 @@ export default function Header() {
 const AppBarStyled = styled(AppBar)`
   background: transparent;
   box-shadow: none;
-  backdrop-filter: blur(50px);
-  /* border-style: solid;
-  border-color: rgba(194, 224, 255, 0.08);
-  border-width: 0px 0px thin; */
+  backdrop-filter: blur(7px);
   background: rgb(11, 22, 53, 0.7);
   color: rgb(160, 170, 180);
-  /* display: none; */
 `;
 const Logo = styled(Typography)`
   text-transform: capitalize;

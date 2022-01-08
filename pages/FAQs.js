@@ -1,63 +1,82 @@
 import styled from "@emotion/styled";
-import * as React from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Fade from "react-reveal/Fade";
+import data from "../data";
+import CanvasScreen from "../components/IcosahedronSphere/CanvasScreen";
+import { useMediaQuery } from "@mui/material";
 
 export default function FAQs() {
+  const isOk = useMediaQuery("(max-width: 890px)");
   return (
-    <Root>
-      <div>
-        {FAQsContent.map((content, index) => (
-          <AccordionStyled key={index}>
-            <AccordionSummaryStyled
-              expandIcon={
-                <ExpandMoreIcon style={{ color: "rgb(160, 170, 180)" }} />
-              }
-              aria-controls={`panel${index}a-content`}
-              id={`panel${index}a-content`}
+    <>
+      <Root>
+        <div>
+          {data.FAQsContent.map((content, index) => (
+            <AccordionStyled
+              key={index}
+              style={{
+                borderTopLeftRadius: !index && "1rem",
+                borderTopRightRadius: !index && "1rem",
+                borderBottomLeftRadius:
+                  data.FAQsContent.length === index + 1 && "1rem",
+                borderBottomRightRadius:
+                  data.FAQsContent.length === index + 1 && "1rem",
+              }}
             >
-              <QuestionText>
-                Q{index + 1}. {content.Question}
-              </QuestionText>
-            </AccordionSummaryStyled>
-            <AccordionDetails>
-              <AnswerText>{content.Answer} </AnswerText>
-            </AccordionDetails>
-          </AccordionStyled>
-        ))}
-      </div>
-    </Root>
+              <AccordionSummaryStyled
+                expandIcon={
+                  <ExpandMoreIcon style={{ color: "rgb(160, 170, 180)" }} />
+                }
+                aria-controls={`panel${index}a-content`}
+                id={`panel${index}a-content`}
+              >
+                <Fade ssrFadeout right>
+                  <QuestionText>
+                    Q{index + 1}. {content.Question}
+                  </QuestionText>
+                </Fade>
+              </AccordionSummaryStyled>
+              <AccordionDetails>
+                <AnswerText>{content.Answer} </AnswerText>
+              </AccordionDetails>
+            </AccordionStyled>
+          ))}
+        </div>
+      </Root>
+      <CanvasScreenContainer>
+        <Fade ssrFadeout right>
+          <CanvasScreen
+            className="CanvasScreen"
+            style={{ width: isOk ? "100vh" : "100vw", height: "100vh" }}
+          />
+        </Fade>
+      </CanvasScreenContainer>
+    </>
   );
 }
 
 const Root = styled.div`
-  /* display: grid;
-  justify-content: start;
-  justify-items: start; */
+  display: flex;
+
+  z-index: 1000;
   padding: 2rem;
   @media (max-width: 50px) {
     padding: 1rem;
   }
   margin-top: 1rem;
-  .css-1irxy1h-MuiPaper-root-MuiAccordion-root:first-of-type {
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-  }
-  .css-1irxy1h-MuiPaper-root-MuiAccordion-root:last-of-type {
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
 `;
 const AccordionStyled = styled(Accordion)`
-  backdrop-filter: blur(50px);
+  max-width: 40rem;
+  backdrop-filter: blur(10px);
   background: rgb(11, 22, 53, 0.7);
   color: rgb(160, 170, 180);
 `;
 const AccordionSummaryStyled = styled(AccordionSummary)`
-  /* font-weight: 700; */
+
 `;
 const QuestionText = styled(Typography)`
   font-weight: 600;
@@ -65,73 +84,9 @@ const QuestionText = styled(Typography)`
 `;
 const AnswerText = styled(Typography)``;
 
-const FAQsContent = [
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-  {
-    Question: `Which course is best for stock market?`,
-    Answer: `The minimum educational qualification required to become a stock broker is a graduation with at least 2 years of experience in a stock broking firm. A sub-broker (the previous stage of being a broker) needs to have passed the class 12th standard to be eligible for his job.`,
-  },
-];
+const CanvasScreenContainer = styled.div`
+  position: fixed;
+  z-index: 1;
+  right: -40vw;
+  bottom: -40vh;
+`;

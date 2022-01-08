@@ -6,16 +6,20 @@ import LoadingScreen from "../components/LoadingScreen";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Particles from "react-tsparticles";
+import config from "react-reveal/globals";
+import { Fade } from "@mui/material";
+
+config({ ssrFadeout: true });
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    // setLoading(true);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 1000);
   }, [router]);
   return (
     <Root>

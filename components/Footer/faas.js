@@ -6,7 +6,7 @@ import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import EmailModal from "../ShowCards/EmailModal";
 import { useState } from "react";
-
+import Fade from "react-reveal/Fade";
 const leftNavPages = ["FAQs", "Terms & conditions", "Privacy Policy"];
 
 const Footer = () => {
@@ -25,40 +25,49 @@ const Footer = () => {
         messageFor="Support"
       />
 
-      <NavigationArea>
-        <LeftNav>
-          {leftNavPages.map((page, index) => (
-            <Link key={index} passHref href={`${page === "Home" ? "/" : page}`}>
-              <StyledButton key={index}>{page}</StyledButton>
-            </Link>
-          ))}
-          <StyledButton onClick={() => setIsModalOpen(true)}>
-            Support
-          </StyledButton>
-        </LeftNav>
-      </NavigationArea>
+      <Fade ssrFadeout bottom>
+        <NavigationArea>
+          <LeftNav>
+            {leftNavPages.map((page, index) => (
+              <Link
+                key={index}
+                passHref
+                href={`${page === "Home" ? "/" : page}`}
+              >
+                <StyledButton key={index}>{page}</StyledButton>
+              </Link>
+            ))}
+            <StyledButton onClick={() => setIsModalOpen(true)}>
+              Support
+            </StyledButton>
+          </LeftNav>
+        </NavigationArea>
+      </Fade>
+
       <MidBar />
 
-      <LogoArea>
-        <CopyrightNotice>
-          <Logo
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              mr: 1,
-            }}
-          >
-            Eazzy
-            <span> Trade</span>
-          </Logo>
-          <CopyrightIcon
-            style={{ margin: "4px", marginRight: "8px", fontSize: 26 }}
-          />
-          {new Date().getFullYear()}
-        </CopyrightNotice>
-        <URiEngin />
-      </LogoArea>
+      <Fade ssrFadeout bottom>
+        <LogoArea>
+          <CopyrightNotice>
+            <Logo
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                mr: 1,
+              }}
+            >
+              Eazzy
+              <span> Trade</span>
+            </Logo>
+            <CopyrightIcon
+              style={{ margin: "4px", marginRight: "8px", fontSize: 26 }}
+            />
+            {new Date().getFullYear()}
+          </CopyrightNotice>
+          <URiEngin />
+        </LogoArea>
+      </Fade>
     </Root>
   );
 };
@@ -96,12 +105,13 @@ const Root = styled.div`
     /* width: 92vw; */
     background: transparent;
     box-shadow: none;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(7px);
     background: rgb(11, 22, 53, 0.7);
     color: rgb(160, 170, 180);
     @media (max-width: 600px) {
       margin: 0px 1rem;
     }
+    margin-bottom: 0px;
   }
 `;
 

@@ -3,45 +3,49 @@ import React from "react";
 import CanvasScreen from "../components/IcosahedronSphere/CanvasScreen";
 import CourseCard from "../components/ShowCards/CourseCard";
 import TitleCard from "../components/ShowCards/TitleCard";
-import profilePic from "../public/s6-01.jpg";
+import Fade from "react-reveal/Fade";
+import data from "../data";
+import Head from "next/head";
+import { useMediaQuery } from "@mui/material";
 
 export default function Course() {
+  const isOk = useMediaQuery("(max-width: 890px)");
+
   return (
     <>
       <Root>
-        <TitleCard
-          text="Our Courses"
-          style={{ marginTop: "1.5rem", marginLeft: ".3rem" }}
-        />
+        <Head>
+          <title>{data.CoursesScreen.head.title}</title>
+          <meta
+            name="description"
+            content={data.CoursesScreen.head.description}
+          />
+          <link rel="icon" href="/favicon.png" />
+        </Head>
+        <Fade ssrFadeout right>
+          <TitleCard
+            text="Our Courses"
+            style={{ marginTop: "1.5rem", marginLeft: ".3rem" }}
+          />
+        </Fade>
         <CourseArea>
-          <CourseCard
-            title="Stock Market Course"
-            description="Next.js will automatically determine the width and height of your
-                        image based on the imported file. These values are used to prevent
-                        Cumulative Layout Shift while your image is loading."
-            picSrc={profilePic}
-          />
-          <CourseCard
-            title="Stock Market Course"
-            description="Next.js will automatically determine the width and height of your
-                        image based on the imported file. These values are used to prevent
-                        Cumulative Layout Shift while your image is loading."
-            picSrc={profilePic}
-          />
-          <CourseCard
-            title="Stock Market Course"
-            description="Next.js will automatically determine the width and height of your
-                        image based on the imported file. These values are used to prevent
-                        Cumulative Layout Shift while your image is loading."
-            picSrc={profilePic}
-          />
+          {data.CoursesScreen.body.courses.map((course, index) => (
+            <CourseCard
+              key={index}
+              title={course.title}
+              description={course.description}
+              picSrc={course.imgSrc}
+            />
+          ))}
         </CourseArea>
       </Root>
       <CanvasScreenContainer>
-        <CanvasScreen
-          className="CanvasScreen"
-          style={{ width: "100vw", height: "100vh" }}
-        />
+        <Fade ssrFadeout right>
+          <CanvasScreen
+            className="CanvasScreen"
+            style={{ width: isOk ? "100vh" : "100vw", height: "100vh" }}
+          />
+        </Fade>
       </CanvasScreenContainer>
     </>
   );

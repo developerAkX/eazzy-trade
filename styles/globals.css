@@ -42,3 +42,16 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #070e22 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+#__next
+  > div
+  > div.Home_container__bCOhY
+  > div.Home_canvasContainer__AkFk8
+  > div
+  > canvas {
+  image-rendering: optimizeQuality;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}

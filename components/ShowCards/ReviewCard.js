@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function ReviewCard({ picSrc, name, description }) {

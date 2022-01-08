@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
 
 export default function TitleCard({ text, ...props }) {
   return (
@@ -25,4 +24,5 @@ const TitleText = styled(Typography)`
   font-size: 25px;
   font-weight: 600;
   margin-right: auto;
+  text-transform: uppercase;
 `;

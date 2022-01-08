@@ -1,103 +1,167 @@
 import styled from "@emotion/styled";
-import { Button, Card, Paper, useMediaQuery } from "@mui/material";
+import { Button, Card, Typography, useMediaQuery } from "@mui/material";
 import Head from "next/head";
-import Image from "next/image";
-import Header from "../components/AppBar/Header";
 import CanvasScreen from "../components/IcosahedronSphere/CanvasScreen";
-import InfoCard from "../components/ShowCards/InfoCard";
-import styles from "../styles/Home.module.css";
 import InfoImgCard from "./../components/ShowCards/InfoImgCard";
 import TitleCard from "../components/ShowCards/TitleCard";
 import Link from "next/link";
-import profilePic from "../public/0733ba760b29378474dea0fdbcb97107.jpg";
-import AboutUsPic from "../public/Copy-of-Pick-a-school-2.png";
-import SchoolTeacherPic from "../public/clip-schoolteacher-near-the-blackboard.png";
-import HardWorkingPic from "../public/clip-hardworking-man.png";
-import SearchingCoursePic from "../public/clip-searching-for-universities-online.png";
 import ReviewCard from "../components/ShowCards/ReviewCard";
+import Fade from "react-reveal/Fade";
+import data from "../data";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width: 490px)");
 
   return (
-    <div className={styles.container}>
+    <Root>
       <Head>
-        <title>Eazzy Trade</title>
-        <meta name="description" content="Educational Platform | Get financially educated." />
+        <title>{data.LandingScreen.head.title}</title>
+        <meta
+          name="description"
+          content={data.LandingScreen.head.description}
+        />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <span className={styles.logoS}>EazzyTrade.in !</span>
-        </h1>
-        <p className={styles.description}>
-          Get started by
-          <Link passHref href="/Course">
-            <EnrolmentButton variant="outlined">Enrolling</EnrolmentButton>
-          </Link>
-        </p>
-      </main>
-      <div className={styles.canvasContainer}>
-        <CanvasScreen
-          style={{
-            width: isMobile ? "100vw" : "calc(100vw - 10px)",
-            height: "100vh",
-          }}
-        />
-      </div>
+
+      <Hero>
+        <Fade ssrFadeout bottom>
+          <TitleText component="h1">
+            {data.LandingScreen.body.title.normal}
+            <BlueText> {data.LandingScreen.body.title.highlighted}</BlueText>
+          </TitleText>
+        </Fade>
+
+        <Fade ssrFadeout bottom>
+          <Description>
+            Get started by
+            <Link passHref href="/Course">
+              <EnrolmentButton variant="outlined">Enrolling</EnrolmentButton>
+            </Link>
+          </Description>
+        </Fade>
+      </Hero>
+
+      <Canvas>
+        <Fade ssrFadeout top>
+          <CanvasScreen
+            style={{
+              width: isMobile ? "100vw" : "calc(100vw - 10px)",
+              height: "100vh",
+            }}
+          />
+        </Fade>
+      </Canvas>
+
+      {data.LandingScreen.body.sections.map((section, index) => (
+        <TranslucentCard elevation={9} key={index}>
+          <Fade ssrFadeout right>
+            <TitleCard text={section.title} />
+          </Fade>
+          {section.contents.map((content, index) => (
+            <Fade
+              ssrFadeout
+              right={index % 2 === 0}
+              left={index % 2 !== 0}
+              key={index}
+            >
+              <InfoImgCard
+                picSrc={content.imgSrc}
+                title={content.title}
+                description={content.description}
+                reverse={index % 2 !== 0}
+              />
+            </Fade>
+          ))}
+        </TranslucentCard>
+      ))}
 
       <TranslucentCard elevation={9}>
-        <TitleCard text="HOW IT WORKS?" />
-        <InfoImgCard
-          picSrc={SearchingCoursePic}
-          title="Pick a Course"
-          description="Pick a Course based on your learning objective. Pick a Course – Personal Finance,  Technical Analysis, Equity Research and others based on what you intend to learn."
-        />
-        <InfoImgCard
-          picSrc={SchoolTeacherPic}
-          title="Learn"
-          description="Learn from our mix of Videos, eBooks, live courses and examples. Interact with our team and other students for collaborative learning experience."
-          reverse
-        />
-        <InfoImgCard
-          picSrc={HardWorkingPic}
-          title="Practice"
-          description="Practice questions and Submit assignments to Get Experience and meet your dream goal."
-        />
+        <Fade ssrFadeout right>
+          <TitleCard text="OUR REVIEWS" />
+        </Fade>
+        <Fade ssrFadeout right>
+          <div className="reviews">
+            {data.LandingScreen.body.reviewsSection.map((review, index) => (
+              <ReviewCard
+                key={index}
+                picSrc={review.profilePic}
+                name={review.name}
+                description={review.text}
+              />
+            ))}
+          </div>
+        </Fade>
       </TranslucentCard>
-      <TranslucentCard elevation={9}>
-        <TitleCard text="OUR REVIEWS" />
-        <div className="reviews">
-          <ReviewCard
-            picSrc={profilePic}
-            name="Abhinav Singh"
-            description="One of the best courses I have taken by far. Everything from the videos to assignments is amazing and informative. It has helped me tremendously. I encourage everyone to take it. "
-          />
 
-          <ReviewCard
-            picSrc={profilePic}
-            name="Abhinav Singh"
-            description="One of the best courses I have taken by far. Everything from the videos to assignments is amazing and informative. It has helped me tremendously. I encourage everyone to take it. "
-          />
-
-          <ReviewCard
-            picSrc={profilePic}
-            name="Abhinav Singh"
-            description="One of the best courses I have taken by far. Everything from the videos to assignments is amazing and informative. It has helped me tremendously. I encourage everyone to take it. "
-          />
-        </div>
-      </TranslucentCard>
       <TranslucentCard elevation={9}>
-        <TitleCard text="About Us" />
-        <InfoImgCard
-          picSrc={AboutUsPic}
-          title="Educational platform"
-          description="Eazzy Trade is an educational platform that focuses on Finance in an applied manner. Here, every learner becomes part of the community and then chats, interacts and forms groups with other learners and experts to learn about course content."
-        />
+        <Fade ssrFadeout right>
+          <TitleCard text="About Us" />
+        </Fade>
+        <Fade ssrFadeout right>
+          <InfoImgCard
+            picSrc={data.LandingScreen.body.aboutUsSection.imgSrc}
+            title={data.LandingScreen.body.aboutUsSection.bold}
+            description={data.LandingScreen.body.aboutUsSection.text}
+          />
+        </Fade>
       </TranslucentCard>
-    </div>
+    </Root>
   );
 }
+
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`;
+
+const Canvas = styled.div`
+  position: absolute;
+  display: grid;
+  place-items: center;
+  margin-top: 50vh;
+  left: 0px;
+  right: 0px;
+`;
+
+const Hero = styled.div`
+  min-height: 100vh;
+  padding: 4rem 0 10rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  z-index: 1;
+`;
+
+const TitleText = styled(Typography)`
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fafafa;
+  text-align: center;
+  @media (max-width: 500px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 3rem;
+  }
+`;
+
+const BlueText = styled.span`
+  color: #0070f3;
+  text-decoration: none;
+`;
+
+const Description = styled.p`
+  text-align: center;
+  margin: 3rem 0rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+`;
 
 const EnrolmentButton = styled(Button)`
   text-transform: capitalize;
@@ -112,6 +176,7 @@ const EnrolmentButton = styled(Button)`
     color: #000;
   }
 `;
+
 const TranslucentCard = styled(Card)`
   max-width: 60rem;
   width: 92vw;
