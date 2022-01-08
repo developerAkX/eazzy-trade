@@ -40,10 +40,10 @@ function MyApp({ Component, pageProps }) {
                 mode: "repulse",
               },
               onHover: {
-                enable: true,
+                enable: false,
                 mode: "bubble",
                 parallax: {
-                  enable: false,
+                  enable: true,
                   force: 60,
                   smooth: 10,
                 },
