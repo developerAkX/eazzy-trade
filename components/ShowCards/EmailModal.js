@@ -283,12 +283,6 @@ const CssTextField = styles(TextField)({
     fontSize: "16px",
     fontFamily: `"Segoe UI", Tahoma, Geneva, Verdana, sans-serif`,
   },
-  ".css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill": {
-    borderRadius: "0.7rem",
-  },
-  ".css-1wc848c-MuiFormHelperText-root": {
-    color: nonFocusColor,
-  },
   "& .Mui-focused input": {
     color: focusColor,
     fontWeight: "600",
@@ -352,6 +346,12 @@ const Root = styled.div`
   grid-template-areas:
     "."
     ".";
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill {
+    border-radius: 0.7rem;
+  }
+  .css-1wc848c-MuiFormHelperText-root {
+    color: ${nonFocusColor};
+  }
 `;
 const ContactArea = styled.div`
   display: grid;
