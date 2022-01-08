@@ -3,7 +3,6 @@ import { Button, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
 
-
 export default function ServicesCard({ title, description, picSrc, link }) {
   return (
     <Root elevation={0}>
@@ -38,16 +37,16 @@ const Root = styled(Paper)`
   backdrop-filter: blur(10px);
   background: rgb(11, 22, 53, 0.7);
   @media (max-width: 775px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-      grid-template-areas:
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
       "."
       ".";
-      justify-items: center;
-    
+    justify-items: center;
   }
 `;
 const ImageSection = styled.div`
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +69,8 @@ const ImageSection = styled.div`
   }
 `;
 const InfoSection = styled.div`
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -96,6 +97,7 @@ const InfoSection = styled.div`
   }
 `;
 const TitleText = styled(Typography)`
+  z-index: 1;
   color: #0070f3;
   color: rgb(160 170 180);
   font-size: 21px;
@@ -104,6 +106,7 @@ const TitleText = styled(Typography)`
   line-height: 25px;
 `;
 const DescriptionText = styled(Typography)`
+  z-index: 1;
   font-size: 16px;
   font-weight: 500;
   color: rgb(160 170 180);
@@ -111,6 +114,7 @@ const DescriptionText = styled(Typography)`
   line-height: 25px;
 `;
 const EnrollButton = styled(Button)`
+  z-index: 1;
   text-transform: capitalize;
   margin-left: auto;
   font-size: 1.1rem;

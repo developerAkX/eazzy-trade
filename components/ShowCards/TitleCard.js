@@ -1,15 +1,17 @@
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import Fade from "react-reveal/Fade";
 
 export default function TitleCard({ text, ...props }) {
   return (
     <Root {...props}>
-      <TitleText>{text}</TitleText>
+      <Fade right>
+        <TitleText>{text}</TitleText>
+      </Fade>
     </Root>
   );
 }
-const Root = styled(Box)`
+const Root = styled.div`
   max-width: 58rem;
   display: grid;
   grid-template-columns: 1fr;
@@ -17,7 +19,7 @@ const Root = styled(Box)`
   justify-content: start;
   justify-items: start;
   @media (max-width: 600px) {
-    padding: 0.2rem .6rem;
+    padding: 0.2rem 0.6rem;
   }
 `;
 const TitleText = styled(Typography)`

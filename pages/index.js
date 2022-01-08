@@ -54,9 +54,8 @@ export default function Home() {
 
       {data.LandingScreen.body.sections.map((section, index) => (
         <TranslucentCard elevation={9} key={index}>
-          <Fade ssrFadeout right>
-            <TitleCard text={section.title} />
-          </Fade>
+          <TitleCard text={section.title} />
+
           {section.contents.map((content, index) => (
             <Fade
               ssrFadeout
@@ -76,9 +75,8 @@ export default function Home() {
       ))}
 
       <TranslucentCard elevation={9}>
-        <Fade ssrFadeout right>
-          <TitleCard text="OUR REVIEWS" />
-        </Fade>
+        <TitleCard text="OUR REVIEWS" />
+
         <Fade ssrFadeout right>
           <div className="reviews">
             {data.LandingScreen.body.reviewsSection.map((review, index) => (
@@ -94,9 +92,8 @@ export default function Home() {
       </TranslucentCard>
 
       <TranslucentCard elevation={9}>
-        <Fade ssrFadeout right>
-          <TitleCard text="About Us" />
-        </Fade>
+        <TitleCard text="About Us" />
+
         <Fade ssrFadeout right>
           <InfoImgCard
             picSrc={data.LandingScreen.body.aboutUsSection.imgSrc}

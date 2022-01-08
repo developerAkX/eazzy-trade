@@ -17,7 +17,7 @@ const SideBar = (props) => {
   return (
     <>
       <StyledDrawer
-        anchor="right"
+        anchor="left"
         open={drawerState}
         variant="temporary"
         onClose={() => setDrawerState(false)}
@@ -26,7 +26,7 @@ const SideBar = (props) => {
         BackdropProps={{
           style: {
             background: "transparent",
-            backdropFilter: "blur(7px)",
+            // backdropFilter: "blur(7px)",
           },
         }}
         PaperProps={{
