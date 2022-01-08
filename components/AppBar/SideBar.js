@@ -17,7 +17,7 @@ const SideBar = (props) => {
   return (
     <>
       <StyledDrawer
-        anchor="left"
+        anchor="right"
         open={drawerState}
         variant="temporary"
         onClose={() => setDrawerState(false)}
