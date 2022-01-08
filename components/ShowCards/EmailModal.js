@@ -274,6 +274,12 @@ const nonFocusColor = "#a0aab4";
 const focusColor = "#0070f3";
 
 const CssTextField = styles(TextField)({
+  "& .MuiFormHelperText-root": {
+    color: nonFocusColor,
+  },
+  "& .MuiFormHelperText-root.Mui-focused": {
+    color: focusColor,
+  },
   "& label.Mui-focused": {
     color: focusColor,
   },
@@ -346,12 +352,6 @@ const Root = styled.div`
   grid-template-areas:
     "."
     ".";
-  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input:-webkit-autofill {
-    border-radius: 0.7rem;
-  }
-  .css-1wc848c-MuiFormHelperText-root {
-    color: ${nonFocusColor};
-  }
 `;
 const ContactArea = styled.div`
   display: grid;
