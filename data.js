@@ -7,6 +7,32 @@ import demo from "./public/s6-01.jpg";
 import telegram from "./public/social media/telegram.svg";
 
 const data = {
+  email: {
+    feedBackForHelp: `
+    Hi there [Name],I’m emailing you today to let you know we have created a new [lead magnet type] called [lead magnet name].
+
+    In this [lead magnet type], you’ll learn how to create [describe what your lead magnet covers in 2 to 3 sentences].
+    
+    [Link]Click here to access the [lead magnet name] ⇒[Link]
+    
+    If you know anybody else who’ll find this useful, please forward the email to them.
+    
+    Let us know if you face any problems accessing the [lead magnet type] by replying to this email. We’ll get back to you ASAP and ensure you gain access to it immediately.
+    
+    Thank you,`,
+    feedBackForCourse: `
+    Hi there [Name],I’m emailing you today to let you know we have created a new [lead magnet type] called [lead magnet name].
+
+    In this [lead magnet type], you’ll learn how to create [describe what your lead magnet covers in 2 to 3 sentences].
+    
+    [Link]Click here to access the [lead magnet name] ⇒[Link]
+    
+    If you know anybody else who’ll find this useful, please forward the email to them.
+    
+    Let us know if you face any problems accessing the [lead magnet type] by replying to this email. We’ll get back to you ASAP and ensure you gain access to it immediately.
+    
+    Thank you,`,
+  },
   LandingScreen: {
     head: {
       title: "Eazzy Trade",

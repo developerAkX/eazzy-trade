@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import EmailModal from "./EmailModal";
 import Fade from "react-reveal/Fade";
+import data from "../../data";
 
 export default function CourseCard({ title, description, picSrc }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function CourseCard({ title, description, picSrc }) {
         description={`Course Enrollment in progress, Fill this form to request Enrollment for ${title}`}
         isModalOpen={isModalOpen}
         handleClose={handleClose}
+        clientMessage={data.email.feedBackForCourse}
       />
       <Fade ssrFadeout right>
         <ImageSection>

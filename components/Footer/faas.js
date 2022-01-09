@@ -8,6 +8,7 @@ import EmailModal from "../ShowCards/EmailModal";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
 const leftNavPages = ["FAQs", "Terms & conditions", "Privacy Policy"];
+import data from "../../data";
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,6 +24,7 @@ const Footer = () => {
         isModalOpen={isModalOpen}
         handleClose={handleClose}
         messageFor="Support"
+        clientMessage={data.email.feedBackForHelp}
       />
 
       <Fade ssrFadeout bottom>

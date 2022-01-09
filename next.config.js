@@ -1,18 +1,25 @@
 module.exports = {
   reactStrictMode: true,
+  rules: [
+    {
+      test: /\.ejs$/,
+      use: {
+        loader: "ejs-compiled-loader",
+        options: {
+          htmlmin: true,
+          htmlminOptions: {
+            removeComments: true,
+          },
+        },
+      },
+    },
+  ],
+  env: {
+    ADMIN_EMAIL: "admin@eazzytrade.in",
+    ADMIN_PASSWORD: "iGs3frjQ!2b9Bw4",
+    MAIL_HOST_URL: "mail.eazzytrade.in",
+    WEB_HOST_URL: "WWW.GOOGLE.COM",
+    MAIL_PORT: 465,
+    // 587,
+  },
 };
-// const withTM = require("next-transpile-modules")([
-//   "@mui/material",
-//   "@mui/system",
-//   "@mui/icons-material", // If @mui/icons-material is being used
-// ]);
-
-// module.exports = withTM({
-//   webpack: (config) => {
-//     config.resolve.alias = {
-//       ...config.resolve.alias,
-//       "@mui/styled-engine": "@mui/styled-engine-sc",
-//     };
-//     return config;
-//   },
-// });

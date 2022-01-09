@@ -23,6 +23,7 @@ export default function EmailModal(props) {
     titleWhite,
     description,
     messageFor,
+    clientMessage,
   } = props;
   const [isFormValid, setIsFormValid] = useState(false);
   const [isErrorAlert, setIsErrorAlert] = useState(false);
@@ -33,6 +34,7 @@ export default function EmailModal(props) {
     phoneNumber: "",
     message: "",
     messageFor,
+    clientMessage,
   });
   const [isValid, setIsValid] = useState({
     name: {
@@ -132,6 +134,7 @@ export default function EmailModal(props) {
             phoneNumber: "",
             message: "",
             messageFor,
+            clientMessage,
           });
         }, 2000);
       }
@@ -146,6 +149,7 @@ export default function EmailModal(props) {
             phoneNumber: "",
             message: "",
             messageFor,
+            clientMessage,
           });
         }, 2000);
       }

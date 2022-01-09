@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eazzy Trade</title>
+  </head>
+
+  <body>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      html {
+        display: grid;
+        place-items: center;
+      }
+
+      body {
+        font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+          "Helvetica Neue", sans-serif;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 0em 0em;
+        grid-template-areas:
+          "."
+          "."
+          "."
+          ".";
+        max-width: 60rem;
+      }
+      .logo {
+        display: grid;
+        height: 100%;
+        width: auto;
+        margin: 0px 10%;
+        background: #101a3c;
+        padding: 2rem;
+        margin-top: 0.1rem;
+      }
+
+      .logo__main {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #b3bbf8;
+      }
+      .logo__main span {
+        color: #0070f3;
+      }
+
+      .email {
+        display: grid;
+        height: 100%;
+        width: auto;
+        margin: 0px 10%;
+        background: #070e22;
+        padding: 2rem;
+      }
+
+      .email__title {
+        color: #8996bb;
+        font-weight: 600;
+        font-size: 26px;
+      }
+
+      .email__label {
+        color: #8996bb;
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+
+      .email__text {
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #576ea3;
+        font-size: 17px;
+      }
+
+      .footer {
+        height: 100%;
+        width: auto;
+        margin: 0px 10%;
+        background: #101a3c;
+        padding: 2rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .copyright__notice {
+        display: block;
+        color: #2c46fc;
+        color: rgb(141, 156, 224);
+        font-weight: 600;
+        font-size: 21px;
+        margin-bottom: 20px;
+      }
+
+
+      .link {
+        text-decoration: none;
+        display: block;
+        color: #b3bbf8;
+        font-weight: 700;
+        font-size: 17px;
+        background: #070e22;
+        padding: 0.7rem 1.1rem;
+        text-align: center;
+        width: 100px;
+      }
+    </style>
+
+    <div class="logo">
+      <div class="logo__main">
+        <span> Eazzy </span>
+        Trade
+      </div>
+    </div>
+    <div class="email">
+      <h2 class="email__title">Your request for <%=MessageFor%> !</h2>
+      <div class="email__label"></div>
+      <p class="email__text"><%=Message%></p>
+    </div>
+
+    <div class="footer">
+      <div class="footer_notice">
+        <span class="copyright__notice">Eazzy Trade © <%=year%> </span>
+      </div>
+      <a href="<%=HomePageURL%>" target="_blank" class="link">Visit us</a>
+    </div>
+  </body>
+</html>
