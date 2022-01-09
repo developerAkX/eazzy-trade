@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       if (success) console.log(`=== Server is ready to take Email ===`);
 
       const AdminEmail = await sendEmail({
-        from: data.email,
+        from: `Eazzy Trade <${data.email}>`,
         to: process.env.ADMIN_EMAIL,
         subject: `You received a email from ${data.name}`,
         template: ContactAdmin,
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       });
 
       const ClientEmail = await sendEmail({
-        from: process.env.ADMIN_EMAIL,
+        from: `Eazzy Trade <${process.env.ADMIN_EMAIL}>`,
         to: data.email,
         subject: `We received Your request ${data.name} !`,
         template: ContactClient,
