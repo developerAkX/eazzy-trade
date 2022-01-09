@@ -102,7 +102,7 @@ export default function EmailModal(props) {
         status:
           name === "message"
             ? validator.isLength(value, {
-                min: 60,
+                min: 10,
                 max: 2000,
               })
             : preValue.message.status,
@@ -241,7 +241,7 @@ export default function EmailModal(props) {
                 label="Phone number"
                 value={formData.phoneNumber}
                 error={!isValid.phoneNumber.status}
-                helperText={"Your Phone number should be valid!"}
+                helperText={"Your Phone number should be valid !"}
               />
             </ContactArea>
             <CssTextField
@@ -252,7 +252,7 @@ export default function EmailModal(props) {
               type="message"
               value={formData.message}
               error={!isValid.message.status}
-              helperText={"At lest type 60 characters of message !"}
+              helperText={"At lest type 10 characters of message !"}
               minRows={11}
             />
             <EnrollButton

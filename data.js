@@ -14,8 +14,9 @@ const data = {
     },
     body: {
       title: {
-        normal: "Welcome to",
-        highlighted: "EazzyTrade.in !",
+        normal: "Learn Stock Market",
+        highlighted: "Trading, LIVE",
+        description: "Learn and trade together with India's top traders.",
       },
       sections: [
         {

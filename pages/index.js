@@ -33,9 +33,9 @@ export default function Home() {
 
         <Fade ssrFadeout bottom>
           <Description>
-            Get started by
+          {data.LandingScreen.body.title.description}
             <Link passHref href="/Course">
-              <EnrolmentButton variant="outlined">Enrolling</EnrolmentButton>
+              <EnrolmentButton variant="outlined">Enroll</EnrolmentButton>
             </Link>
           </Description>
         </Fade>
