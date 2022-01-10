@@ -3,6 +3,7 @@ import InfoImgCard from "../components/ShowCards/InfoImgCard";
 import InfoCard from "../components/ShowCards/InfoCard";
 import TitleCard from "../components/ShowCards/TitleCard";
 import styled from "@emotion/styled";
+import Fade from "react-reveal/Fade";
 
 export default function PrivacyPolicy() {
   return (
@@ -10,7 +11,9 @@ export default function PrivacyPolicy() {
       <TitleCard text="PRIVACY POLICY" />
       {content.map((section, index) => (
         <TranslucentCard key={index} elevation={9}>
-          <InfoCard title={section.title} description={section.description} />
+          <Fade bottom>
+            <InfoCard title={section.title} description={section.description} />
+          </Fade>
         </TranslucentCard>
       ))}
     </Root>
@@ -23,10 +26,11 @@ const Root = styled.div`
   justify-content: start;
   justify-items: start;
   padding: 2rem;
-  @media (max-width: 50px) {
+  @media (max-width: 500px) {
     padding: 1rem;
   }
-  margin-top: 1rem;
+  z-index: 1000;
+  margin-top: 4rem;
 `;
 
 const TranslucentCard = styled(Card)`
@@ -51,55 +55,55 @@ const content = [
     title: "",
     description: (
       <>
-        “AYMPER MARKETS” RESPECTS YOUR PRIVACY. PLEASE SEE OUR PRIVACY NOTICE
-        FOR IMPORTANT INFORMATION AND DISCLOSURES RELATING TO THE COLLECTION AND
-        USE OF YOUR PERSONALLY IDENTIFIABLE INFORMATION IN CONNECTION WITH YOUR
-        USE OF THE SERVICES.
+        “aymper markets” respects your privacy. Please see our privacy notice
+        For important information and disclosures relating to the collection and
+        Use of your personally identifiable information in connection with your
+        Use of the services.
         <br />
         <br />
-        1). WE RESPECT THE PRIVACY OF OUR MEMBERS AND ARE SERIOUS ABOUT
-        PROTECTING YOUR ONLINE PRIVACY. THIS POLICY WILL EXPLAIN HOW WE GATHER
-        AND USE PERSONAL INFORMATION SUBMITTED. THEREFORE, BY REGISTERING AND
-        USING THIS SITE, YOU ARE AGREEING AND ACCEPTING THIS POLICY. INFORMATION
-        MAY BE USED IN ADDITIONAL WAYS AS POSTED ON THIS PRIVACY POLICY IN THE
-        FUTURE. AS IF WE SUSPECT A USER OF COMMITTING FRAUD, IN WHICH CASE USER
-        INFORMATION MAY BE SHARED DURING THE COURSE OF OUR INVESTIGATION. WE
-        RESERVE THE RIGHT TO CHANGE THIS POLICY AT ANY TIME. IF WE MAKE A
-        MATERIAL CHANGE REGARDING HOW WE USE YOUR PERSONAL INFORMATION, WE MAY
-        NOTIFY YOU OF THE EXISTENCE AND LOCATION OF THE NEW OR REVISED POLICY
-        THROUGH EMAIL OR BY POSTING THE CHANGES ONLINE AT OUR WEBSITE
+        1). We respect the privacy of our members and are serious about
+        Protecting your online privacy. This policy will explain how we gather
+        And use personal information submitted. Therefore, by registering and
+        Using this site, you are agreeing and accepting this policy. Information
+        May be used in additional ways as posted on this privacy policy in the
+        Future. As if we suspect a user of committing fraud, in which case user
+        Information may be shared during the course of our investigation. We
+        Reserve the right to change this policy at any time. If we make a
+        Material change regarding how we use your personal information, we may
+        Notify you of the existence and location of the new or revised policy
+        Through email or by posting the changes online at our website
         <br />
         <br />
-        2). WE WILL NOT SELL OR SHARE USER INFORMATION TO OTHER ADVERTISERS OR
-        BUSINESSES IN ORDER TO ENHANCE THE SERVICE PROVIDED TO OUR USERS ALSO
-        DESCRIPTION OF THE CATEGORIES OF PERSONAL INFORMATION DISCLOSED. WE WILL
-        ONLY COLLECT INFORMATION THAT IS VOLUNTEERED DURING THE REGISTRATION
-        PROCESS OR IN ANY RESPONSES TO SPECIFIC INFORMATION REQUESTS. WE DO NEED
-        THIS INFORMATION IN ORDER TO PROVIDE SERVICES THAT YOU REQUEST. WE MAY
-        ALSO COLLECT YOUR IP ADDRESS AND LOGGING INFORMATION FOR YOUR SAFETY FOR
-        FUTURE LOGINS.
+        2). We will not sell or share user information to other advertisers or
+        Businesses in order to enhance the service provided to our users also
+        Description of the categories of personal information disclosed. We will
+        Only collect information that is volunteered during the registration
+        Process or in any responses to specific information requests. We do need
+        This information in order to provide services that you request. We may
+        Also collect your ip address and logging information for your safety for
+        Future logins.
         <br />
         <br />
-        3). MEMBERS CANNOT USE OTHERS INFORMATION TO CREATE ACCOUNT OR THEY ARE
-        NOT LIABLE TO USE OTHERS CREDIT, DEBIT CARDS OR ANY OTHER TRANSACTION
-        PROCESS, IT WILL BE THE PERSONAL CHOICE AND AGAINST OUR PRIVACY POLICY,
-        AND THIS CAN’T BE ENTERTAINED AT THAT TIME. IF ANYONE FOUND USING OTHERS
-        ACCOUNT FOR TRANSACTION OR SOMEONE CLAIMED, USER WILL BE RESPONSIBLE AND
-        THE ACCOUNT WILL BE TERMINATED PERMANENTLY.
+        3). Members cannot use others information to create account or they are
+        Not liable to use others credit, debit cards or any other transaction
+        Process, it will be the personal choice and against our privacy policy,
+        And this can’t be entertained at that time. If anyone found using others
+        Account for transaction or someone claimed, user will be responsible and
+        The account will be terminated permanently.
         <br />
         <br />
-        4). WE USE COOKIES AND OTHER TECHNOLOGIES TO TRACK THE USE OF OUR SITE
-        AND FOR CERTAIN ADVERTISING PURPOSES
+        4). We use cookies and other technologies to track the use of our site
+        And for certain advertising purposes
         <br />
         <br />
-        5). THE PERSONAL INFORMATION WE COLLECT IS TO HELP US BETTER UNDERSTAND
-        YOUR NEEDS, TO PROVIDE YOU WITH PERSONALIZED AND EFFICIENT SERVICE, AND
-        FOR OTHER PURPOSES DESCRIBED IN THIS PRIVACY POLICY. WE GENERALLY OBTAIN
-        PERSONAL INFORMATION DIRECTLY THROUGH THE INFORMATION THAT YOU PROVIDE
-        TO “AYMPER MARKETS”. WE ALSO MAY OBTAIN PERSONAL INFORMATION
-        AUTOMATICALLY, THROUGH THE USE OF COOKIES AND OTHER TECHNOLOGIES, AND IN
-        SOME INSTANCES FROM THIRD PARTIES, SUCH AS COMPANIES THAT SPONSOR
-        PROGRAMS OR CONFERENCES IN WHICH “AYMPER MARKETS” PARTICIPATES.
+        5). The personal information we collect is to help us better understand
+        Your needs, to provide you with personalized and efficient service, and
+        For other purposes described in this privacy policy. We generally obtain
+        Personal information directly through the information that you provide
+        To “aymper markets”. We also may obtain personal information
+        Automatically, through the use of cookies and other technologies, and in
+        Some instances from third parties, such as companies that sponsor
+        Programs or conferences in which “aymper markets” participates.
       </>
     ),
   },

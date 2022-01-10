@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Typography } from "@mui/material";
+import { capitalize, Typography } from "@mui/material";
 
 export default function InfoCard({ reverse, title, description }) {
   return (
@@ -28,8 +28,9 @@ const TextSection = styled(Typography)`
     padding: 0.5rem;
   }
 `;
-const DescriptionText = styled.div`
+const DescriptionText = styled(Typography)`
   font-size: 18px;
   line-height: 1.8rem;
   letter-spacing: 0.05rem;
+  text-transform: capitalize;
 `;

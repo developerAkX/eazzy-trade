@@ -11,10 +11,10 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import SideBar from "./SideBar";
-import { Button } from "@mui/material";
+import { Button, Slide, useScrollTrigger } from "@mui/material";
 import Link from "next/link";
 
-const pages = ["Home", "Service", "Course"];
+const pages = ["Home", "Service", "Course", "FAQs"];
 
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,71 +36,84 @@ export default function Header() {
   };
 
   return (
-    <AppBarStyled position="sticky">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Logo
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
-            Eazzy
-            <span> Trade</span>
-          </Logo>
-
-          <Logo
-            variant="h6"
-            noWrap
-            component="div"
-            style={{ fontSize: "1.5rem" }}
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            Eazzy <span>Trade</span>
-          </Logo>
-          <Box
-            sx={{
-              flexGrow: 0,
-              marginLeft: "auto",
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            {pages.map((page, index) => (
-              <Link
-                key={index}
-                passHref
-                href={`${page === "Home" ? "/" : page}`}
-              >
-                <MenuButton
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 1, mx: 1, color: "white", display: "block" }}
-                >
-                  {page}
-                </MenuButton>
-              </Link>
-            ))}
-          </Box>
-          <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="larger"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+    <HideOnScroll>
+      <AppBarStyled>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Logo
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-          <SideBar
-            drawerState={anchorElNav}
-            setDrawerState={setAnchorElNav}
-            pages={pages}
-          />
-        </Toolbar>
-      </Container>
-    </AppBarStyled>
+              Eazzy
+              <span> Trade</span>
+            </Logo>
+
+            <Logo
+              variant="h6"
+              noWrap
+              component="div"
+              style={{ fontSize: "1.5rem" }}
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            >
+              Eazzy <span>Trade</span>
+            </Logo>
+            <Box
+              sx={{
+                flexGrow: 0,
+                marginLeft: "auto",
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              {pages.map((page, index) => (
+                <Link
+                  key={index}
+                  passHref
+                  href={`${page === "Home" ? "/" : page}`}
+                >
+                  <MenuButton
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 1, mx: 1, color: "white", display: "block" }}
+                  >
+                    {page}
+                  </MenuButton>
+                </Link>
+              ))}
+            </Box>
+            <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="larger"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+            </Box>
+            <SideBar
+              drawerState={anchorElNav}
+              setDrawerState={setAnchorElNav}
+              pages={pages}
+            />
+          </Toolbar>
+        </Container>
+      </AppBarStyled>
+    </HideOnScroll>
+  );
+}
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
   );
 }
 

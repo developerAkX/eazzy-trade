@@ -33,7 +33,7 @@ export default function Home() {
 
         <Fade ssrFadeout bottom>
           <Description>
-          {data.LandingScreen.body.title.description}
+            {data.LandingScreen.body.title.description}
             <Link passHref href="/Course">
               <EnrolmentButton variant="outlined">Enroll</EnrolmentButton>
             </Link>
@@ -107,6 +107,10 @@ export default function Home() {
 }
 
 const Root = styled.div`
+  margin-top: 4rem;
+  @media (max-width: 600px) {
+    margin-top: 3rem;
+  }
   display: flex;
   flex-direction: column;
   align-items: stretch;

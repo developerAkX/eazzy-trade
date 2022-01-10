@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import EmailModal from "../ShowCards/EmailModal";
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
-const leftNavPages = ["FAQs", "Terms & conditions", "Privacy Policy"];
+const leftNavPages = ["Terms & conditions", "Privacy Policy"];
 import data from "../../data";
 
 const Footer = () => {
@@ -98,22 +98,21 @@ const Root = styled.div`
       "."
       ".";
     gap: 0.5em 0.5em;
-    justify-content: center;
   }
   && {
-    margin-top: auto;
     margin-bottom: 0px;
     margin: 0px 2rem;
-    /* width: 92vw; */
     background: transparent;
     box-shadow: none;
     backdrop-filter: blur(7px);
     background: rgb(11, 22, 53, 0.7);
     color: rgb(160, 170, 180);
+    margin-bottom: 0px;
+    margin-top: auto;
     @media (max-width: 600px) {
       margin: 0px 1rem;
+      margin-top: auto;
     }
-    margin-bottom: 0px;
   }
 `;
 

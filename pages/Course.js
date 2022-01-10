@@ -51,10 +51,10 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* padding: 2rem 0rem 0px 4rem;
-  @media (max-width: 775px) {
-    padding: 1rem 2rem;
-  } */
+  margin-top: 4rem;
+  @media (max-width:600px) {
+    margin-top: 3rem;
+  }
 `;
 const CourseArea = styled.div`
   display: grid;

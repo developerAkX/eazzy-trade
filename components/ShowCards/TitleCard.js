@@ -21,6 +21,11 @@ const Root = styled.div`
   @media (max-width: 600px) {
     padding: 0.2rem 0.6rem;
   }
+  @media (max-width: 480px) {
+    width: 85vw;
+    overflow: hidden;
+    
+  }
 `;
 const TitleText = styled(Typography)`
   font-size: 25px;

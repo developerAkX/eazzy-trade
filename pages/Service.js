@@ -53,6 +53,10 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 4rem;
+  @media (max-width:600px) {
+    margin-top: 3.5rem;
+  }
 `;
 const ServicesArea = styled.div`
   display: grid;
@@ -66,8 +70,7 @@ const ServicesArea = styled.div`
   justify-items: start;
   margin-top: 1rem;
   z-index: 2;
-  @media (max-width: 775px) {
-  }
+  
 `;
 const CanvasScreenContainer = styled.div`
   position: fixed;

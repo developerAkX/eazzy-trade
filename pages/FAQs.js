@@ -8,12 +8,14 @@ import Fade from "react-reveal/Fade";
 import data from "../data";
 import CanvasScreen from "../components/IcosahedronSphere/CanvasScreen";
 import { useMediaQuery } from "@mui/material";
+import TitleCard from "../components/ShowCards/TitleCard";
 
 export default function FAQs() {
   const isOk = useMediaQuery("(max-width: 890px)");
   return (
     <>
       <Root>
+      <TitleCard style={{ marginBottom: "1.5rem"}} text="Frequently Asked Questions" />
         <div>
           {data.FAQsContent.map((content, index) => (
             <AccordionStyled
@@ -34,7 +36,7 @@ export default function FAQs() {
                 aria-controls={`panel${index}a-content`}
                 id={`panel${index}a-content`}
               >
-                <Fade ssrFadeout right>
+                <Fade ssrFadeout bottom>
                   <QuestionText>
                     Q{index + 1}. {content.Question}
                   </QuestionText>
@@ -48,7 +50,7 @@ export default function FAQs() {
         </div>
       </Root>
       <CanvasScreenContainer>
-        <Fade ssrFadeout right>
+        <Fade ssrFadeout bottom>
           <CanvasScreen
             className="CanvasScreen"
             style={{ width: isOk ? "100vh" : "100vw", height: "100vh" }}
@@ -61,13 +63,16 @@ export default function FAQs() {
 
 const Root = styled.div`
   display: flex;
-
+  flex-direction: column;
   z-index: 1000;
   padding: 2rem;
   @media (max-width: 50px) {
     padding: 1rem;
   }
-  margin-top: 1rem;
+  margin-top: 4rem;
+  @media (max-width: 600px) {
+    margin-top: 3rem;
+  }
 `;
 const AccordionStyled = styled(Accordion)`
   max-width: 40rem;
@@ -75,9 +80,7 @@ const AccordionStyled = styled(Accordion)`
   background: rgb(11, 22, 53, 0.7);
   color: rgb(160, 170, 180);
 `;
-const AccordionSummaryStyled = styled(AccordionSummary)`
-
-`;
+const AccordionSummaryStyled = styled(AccordionSummary)``;
 const QuestionText = styled(Typography)`
   font-weight: 600;
   font-size: 18px;
