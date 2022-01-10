@@ -33,7 +33,7 @@ export default function Home() {
 
         <Fade ssrFadeout bottom>
           <Description>
-            {data.LandingScreen.body.title.description}
+            <div>{data.LandingScreen.body.title.description}</div>
             <Link passHref href="/Course">
               <EnrolmentButton variant="outlined">Enroll</EnrolmentButton>
             </Link>
@@ -162,6 +162,11 @@ const Description = styled.p`
   margin: 3rem 0rem;
   line-height: 1.5;
   font-size: 1.5rem;
+  display: flex;
+  @media (max-width: 660px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const EnrolmentButton = styled(Button)`
@@ -175,6 +180,9 @@ const EnrolmentButton = styled(Button)`
     border: 3px solid #0070f3;
     background: #0070f3;
     color: #000;
+  }
+  @media (max-width: 660px) {
+    margin-top: 1rem;
   }
 `;
 
